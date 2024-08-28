@@ -3,198 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Server Name</title>
+    <title>Mods - Wurm Unlimited Server</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to [Your Server Name]</h1>
+        <h1>Mods</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="mods.html">Mods</a></li>
                 <li><a href="rules.html">Rules</a></li>
             </ul>
         </nav>
     </header>
     <main>
-<a href="" id="github-corner" class="github-corner" aria-label="View source on GitHub" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#000000; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-
-
-<script>
-
-function formatColumns(list, target, columnCount = 2, paddingWidth = 3, showNumbers = false) {
-    // Validate columnCount
-    if (columnCount < 1) columnCount = 1; // Ensure there's at least one column
-    const rowsPerColumn = Math.ceil(list.length / columnCount);
-
-    // Initialize columns array
-    const columns = Array.from({ length: columnCount }, (_, columnIndex) =>
-        list.slice(columnIndex * rowsPerColumn, (columnIndex + 1) * rowsPerColumn)
-    );
-
-    // Calculate the padding for item numbers
-    let maxNumberLength = 0;
-    if (showNumbers) {
-        const totalItems = list.length;
-        maxNumberLength = totalItems.toString().length; // Length of the last item number
-    }
-
-    // Prefix items with numbers if showNumbers is true and pad them
-    if (showNumbers) {
-        let itemNumber = 1;
-        for (let i = 0; i < columns.length; i++) {
-            columns[i] = columns[i].map(item => {
-                // Right-align the item number
-                const itemNumberStr = itemNumber.toString().padStart(maxNumberLength, ' ');
-                const numberedItem = `${itemNumberStr}. ${item}`;
-                itemNumber++;
-                return numberedItem;
-            });
-        }
-    }
-
-    // Find max length in each column to ensure alignment
-    const maxLengths = columns.map(col =>
-        Math.max(...col.map(item => item.length))
-    );
-
-    // Pad items in each column and add paddingWidth
-    const paddedColumns = columns.map((col, colIndex) =>
-        col.map(item => item.padEnd(maxLengths[colIndex]) + " ".repeat(paddingWidth))
-    );
-
-    // Adjust the last column's padding
-    const lastColumnIndex = paddedColumns.length - 1;
-    paddedColumns[lastColumnIndex] = paddedColumns[lastColumnIndex].map(item =>
-        item.trimEnd()
-    );
-
-    // Combine the columns row by row
-    const formattedRows = [];
-    for (let rowIndex = 0; rowIndex < rowsPerColumn; rowIndex++) {
-        const rowItems = paddedColumns.map(col => col[rowIndex] || ''.padEnd(maxLengths[paddedColumns.indexOf(col)]));
-        formattedRows.push(rowItems.join('').trimRight());
-    }
-
-    // Join the rows to form the final text
-    const formattedText = formattedRows.join('\n');
-
-    // Insert the formatted text into the specified target
-    target.textContent = formattedText;
-}
-
-
-var mod_list = `
-actiondemo
-AddKingdomItems
-AddMissionItems
-announcer
-archeotweaks
-Armoury
-AshProduce
-AutoAlerts
-bagofholding
-BalanceMod
-betterdig
-betterfarm
-bountymod
-BountyOnBurn
-bulkmod
-bulkseparated
-chestclaim
-christmasmod
-combiner
-CookingMod
-CopyItems
-creatureagemod
-creaturemod
-cropmod
-customtrader
-DisableFatigue
-DisableFogSpiders
-DiscordRelay
-DoubleBulkCapacity
-emptytrashbin
-EnhancedChickenCoop
-EpicMissionHints
-FireBurnTime
-fixguards
-gmcommands
-GuardAssist
-harvesthelper
-hitchingpost
-hitchlimits
-hotsfixes
-httpserver
-hwportals
-inbreedwarning
-LeaderboardAndTitles
-leadmore
-LocationCommand
-logs
-MarkAndRecall
-meditatemod
-MightyMattockMod
-milkreset
-minipets
-morecraftables
-MorePotables
-movemod
-movetocenter
-nobuildlimit
-NoHolyGround
-NoMailCost
-onetilemining
-phobiamod
-PickMoreSprouts
-planters
-roll
-sacrificemod
-salvemod
-scriptrunner
-serverchattab
-serverfixes
-servermap
-serverpacks
-serverplayercounter
-ServerTimeCommand
-setheight
-SimpleConcrete
-SinduskLibrary
-Spellcraft
-spellmod
-StableMaster
-StarterGear
-TabardMod
-taxidermy
-timerfix
-TreasureHunting
-VoteReward
-`.trim().split(`\n`)
-
-var target       = document.querySelector('tr#mod_list td pre')
-var columnCount  = 3
-var paddingWidth = 4
-var showNumbers  = true
-
-formatColumns(mod_list, target, columnCount, paddingWidth, showNumbers)
-
-
-
-
-var github_username = window.location.href.match(/\/\/(\w+)/)[1];
-
-var github_corner = document.getElementById(`github-corner`);
-    github_corner.href = `https://github.com/${github_username}/Wurm_Unlimited`;
-
-</script>
-
-
+        <ul>
+            <li><strong>AddKingdomItems</strong> - Adds kingdom items like wagons, banners, flags, etc.</li>
+            <li><strong>AffinityFixer</strong> - Replaces PVP or other useless PVE affinities. To use the Affinity Fixer, open skill window and right-click on the above-mentioned affinity and select 'Fix Affinity' and then relog.</li>
+            <li><strong>Alchemy</strong> - Potions and Poisons can be created. <a href="https://forum.wurmonline.com/index.php?/topic/188237-released-alchemy-mod">Link to Alchemy Mod</a></li>
+            <li><strong>Announcer</strong> - Server-wide player login announcement.</li>
+            <li><strong>AshProduce</strong> - Items that have cooling ticks (Oven, forge, campfire) can produce ash.</li>
+            <li><strong>Bagofholding</strong> - Adds Bag of Holding spell to exponentially increase container sizes.</li>
+            <li><strong>BalanceMod</strong> - Allows command-line weirdos aficionados to retrieve their bank balance by typing /balance.</li>
+            <li><strong>Bdew_server_mod_tools</strong> - Back end library for mods.</li>
+            <li><strong>Betterdig</strong> - Keeps dirt from going into inventory when digging.</li>
+            <li><strong>Betterfarm</strong> - Sow, farm and harvest multiple tiles at higher skill levels.</li>
+            <li><strong>BetterGamemasters</strong> - Allows GMs unlimited inventory weight.</li>
+            <li><strong>BoatMod</strong> - Small changes to make boats better. <a href="#">release-log</a></li>
+            <li><strong>Bountymod</strong> - Kill creatures for money and Karma. Allows player-bred creatures to be culled for rewards.</li>
+            <li><strong>Bounty on burn</strong> - Burn corpses for money and Karma.</li>
+            <li><strong>Bulkmod</strong> - Place hot items directly into BSBs.</li>
+            <li><strong>Bulkseperated</strong> - Sorting containers like crates, FSBs, and BSBs.</li>
+            <li><strong>CommonTweaks</strong> - Small tweaks, mostly for enchanting rift items for future use.</li>
+            <li><strong>CookingMod</strong> - Fills cooking containers automatically (right-click and select Fill) must know recipe and have ingredients in inventory.</li>
+            <li><strong>Creatureagemod</strong> - Age creatures to Mature quickly, slow down aging after.</li>
+            <li><strong>Creaturemod</strong> - Adds new creatures and variants of existing creatures.</li>
+            <li><strong>Cropmod</strong> - Prevents crops from weeding.</li>
+            <li><strong>CustomWagons</strong> - Adds many new wagon model types.</li>
+            <li><strong>Decorations</strong> - Adds various decorations to create/place.</li>
+            <li><strong>Deedmod</strong> - Customizing deed configurations on the back end.</li>
+            <li><strong>DisableFogSpiders</strong> - Does what it says. Fog spiders cause lag.</li>
+            <li><strong>DiscordRelay</strong> - Connects kingdom chats to Discord (eventually).</li>
+            <li><strong>DuskCombat (disabled for now)</strong> - Reworked combat system, will likely be implemented in future. Required for other mods and currently disabled.</li>
+            <li><strong>EmptyTrashBin</strong> - Flint and steel on a trash heap will empty the heap immediately.</li>
+            <li><strong>FireBurnTime</strong> - Examine fires to see how many minutes remaining on burn time.</li>
+            <li><strong>Fixguards</strong> - Fixes issues with deed guards, backend mod.</li>
+            <li><strong>HarvestHelper</strong> - Get exact season times with /seasons, alerts what is in season on join.</li>
+            <li><strong>Hitchingpost</strong> - Create hitching post item, can hitch up to 4 animals to a post.</li>
+            <li><strong>Hitchlimits</strong> - Allows control over what animals can be hitched to carts/wagons.</li>
+            <li><strong>Httpserver</strong> - Internal web server mod for backend uses.</li>
+            <li><strong>Highwayportals</strong> - Player craftable portals that allow teleporting between deeds on the same highway network.</li>
+            <li><strong>Iconzz</strong> - Custom icons for various mods.</li>
+            <li><strong>Inbreedwarning</strong> - Warns when breeding related animals.</li>
+            <li><strong>InfiniteWideMineEntrances</strong> - No limit to mine entrance sizes, mine doors still work on each entrance.</li>
+            <li><strong>LocationMod</strong> - Find your coordinates on the map at any time by typing /location in the chat.</li>
+            <li><strong>MarkandRecall</strong> - Create runes from marble bricks to be able to mark and teleport. Distance relies on quality of the rune.</li>
+            <li><strong>Meditatemod</strong> - Removes meditation restrictions and allows for easier meditation path following.</li>
+            <li><strong>MightyMattockMod</strong> - Adds Mattock Pick, which lets you terraform on tile borders. Can flatten rock beneath dirt, chop trees, and harvest resources.</li>
+            <li><strong>ModifyGestationPeriod</strong> - Decreases animal gestation, adds Decrease Gestation priest spell.</li>
+            <li><strong>Movemod</strong> - Custom movement configurations - player speed, encumbrance, etc.</li>
+            <li><strong>Movetocenter</strong> - Allows objects to move to center of tile.</li>
+            <li><strong>NoMailCost</strong> - Removes mail costs.</li>
+            <li><strong>PickMoreSprouts</strong> - More sprouts per "Pick" action.</li>
+            <li><strong>SacrificeMod</strong> - Allows for chance of a strange bone when sacrificing a rare, supreme, or fantastic item in an altar (priest only) 1/20 chance.</li>
+            <li><strong>Salvemod</strong> - Adds "power - " to the beginning of newly made healing cover names, so you no longer have to figure it out in your head.</li>
+            <li><strong>Scriptrunner</strong> - Allows for backend scripting connections.</li>
+            <li><strong>Servermap</strong> - Custom map configurations for backend (Live map at: <a href="https://terra-nullius.github.io/wurmmapgen/">https://terra-nullius.github.io/wurmmapgen/</a>).</li>
+            <li><strong>Serverpacks</strong> - Allows clients to download custom content from the server.</li>
+            <li><strong>ServerTweaks</strong> - Various configuration changes for server settings.</li>
+            <li><strong>SimpleConcrete</strong> - Create concrete with Clay + Rock Shards.</li>
+            <li><strong>SinduskLibrary</strong> - Backend library for mods.</li>
+            <li><strong>Spellcraft</strong> - Reworked spell system for more fun, adds several spells (see server settings).</li>
+            <li><strong>Spellmod</strong> - Removed priest restrictions.</li>
+            <li><strong>StableMaster</strong> - Convert your animal to a token to carry in inventory.</li>
+            <li><strong>Startergear</strong> - Configurable starter gear for newbies.</li>
+            <li><strong>Taxidermy</strong> - Create a taxidermy kit to stuff and mount your trophy kills.</li>
+            <li><strong>Tentsleep</strong> - Sleep in your tent for a small sleep bonus!</li>
+            <li><strong>Timerfix</strong> - Fixes various action timers.</li>
+            <li><strong>Treasurehunting</strong> - Treasure maps that lead to buried treasure and some danger.</li>
+            <li><strong>Upkeepcosts (removed for bug testing)</strong> - Allows for customized upkeep costs for deeds.</li>
+            <li><strong>VotingRewards</strong> - Earn coin for voting for the server on Wurm-Unlimited.com (<a href="https://wurm-unlimited.com/server/12775/">Link to Voting Page</a>).</li>
+            <li><strong>Windmill</strong> - Adds 3 different mills to bulk-create items like planks and bricks.</li>
+            <li><strong>WyvernMod</strong> - A thousand little tweaks, added creatures like Titans and Wyverns, a lot of QoL options.</li>
+        </ul>
     </main>
     <footer>
-        <p>&copy; [Year] [Your Server Name]. All rights reserved.</p>
+        <p>&copy; 2024 Wurm Unlimited Server. All rights reserved.</p>
     </footer>
 </body>
 </html>
-
