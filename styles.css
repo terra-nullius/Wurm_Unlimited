@@ -72,6 +72,7 @@ table a:active {
 
 
 tr span.disabled {
+    float: right;
     padding-top: 1px;
     padding-bottom: 2px;
     padding-left: 4px;
@@ -80,9 +81,6 @@ tr span.disabled {
     color: #fff;
     background-color: hsl(0, 100%, 42%);
     font-weight: normal;
-/*    font-family: Verdana, Geneva, sans-serif;*/
-/*    font-size: 62.5%;*/
-/*    line-height: 10px;*/
 }
 
 
