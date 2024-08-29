@@ -72,7 +72,6 @@ table a:active {
 
 
 tr span.disabled {
-    float: right;
     padding-top: 1px;
     padding-bottom: 2px;
     padding-left: 4px;
