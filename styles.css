@@ -25,6 +25,60 @@ nav ul li a {
 main {
     padding: 20px;
 }
+
+
+table {
+    margin: 0 auto;
+    width: 960px;
+    border-collapse: collapse;
+}
+table tr th,
+table tr td {
+    padding-top:    6px;
+    padding-bottom: 6px;
+}
+table tr:not(:last-child) th,
+table tr:not(:last-child) td {
+    border-bottom: 1px solid #80808080;
+}
+table tr th {
+    text-align: right;
+    padding-right: 12px;
+}
+
+
+/* link styling begin  */
+table a:link,
+table a:visited {
+    color: hsl(190, 81%, 67%);
+    text-decoration: none;
+    outline: none;
+    background-color: hsl(0, 100%, 11%);
+    padding: 3px 6px;
+    border-radius: 4px;
+    display: inline-block;
+}
+table a:hover {
+    color: hsl(80, 76%, 53%);
+}
+table a:active {
+    color: hsl(40, 93%, 51%);
+}
+/* link styling end  */
+
+
+th span.disabled {
+    padding: 3px 6px 4px;
+    border-radius: 4px;
+    display: inline-block;
+    color: #fff;
+    background-color: hsl(0, 100%, 42%);
+    font-size: 10px;
+    line-height: 10px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+
 footer {
     text-align: center;
     padding: 10px;
